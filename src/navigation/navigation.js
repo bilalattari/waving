@@ -1,6 +1,8 @@
 import React from 'react';
-import {createAppContainer, createSwitchNavigator} from 'react-navigation';
-import {createStackNavigator} from 'react-navigation-stack';
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import { createDrawerNavigator } from 'react-navigation-drawer';
+import DrawerComponent from './DrawerComponent'
 import LoginScreen from '../screens/login';
 import SplashScreen from '../screens/splash';
 import Home from '../screens/home';
@@ -11,7 +13,7 @@ const SplashStack = createStackNavigator(
       screen: SplashScreen,
     },
   },
-  {headerMode: null},
+  { headerMode: null },
 );
 const AuthStack = createStackNavigator(
   {
@@ -19,7 +21,7 @@ const AuthStack = createStackNavigator(
       screen: LoginScreen,
     },
   },
-  {headerMode: null},
+  { headerMode: null },
 );
 const AppStack = createStackNavigator(
   {
@@ -27,8 +29,22 @@ const AppStack = createStackNavigator(
       screen: Home,
     },
   },
-  {initialRouteName: 'Home', headerMode: null},
+  { initialRouteName: 'Home', headerMode: null },
 );
+
+const MainDrawer = createDrawerNavigator(
+  {
+    MainTabs: AppStack,
+  },
+  {
+    drawerBackgroundColor: '#fff',
+    drawerWidth: '75%',
+    contentComponent: ({ navigation }) => (
+      <DrawerComponent navigation={navigation} />
+    ),
+  },
+);
+
 
 const App = createSwitchNavigator({
   Splash: {
@@ -38,7 +54,7 @@ const App = createSwitchNavigator({
     screen: AuthStack,
   },
   App: {
-    screen: AppStack,
+    screen: MainDrawer,
   },
 });
 

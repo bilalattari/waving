@@ -13,6 +13,7 @@ import {
 import Button from '../component/Button';
 import Text from '../component/Text';
 import Footer from '../component/Footer'
+
 export default (Home = props => {
 
   const statistics = () => {
