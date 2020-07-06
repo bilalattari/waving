@@ -84,10 +84,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
   },
-  socialButton: {marginVertical: 15},
+  socialButton: {marginTop: 5},
   orText: {marginHorizontal: 12},
   inputContainer: {
-    height: Dimensions.get('screen').height - 130,
+    height: Dimensions.get('screen').height - 90,
     marginTop: 25,
     width: '92%',
     backgroundColor: '#fff',
