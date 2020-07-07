@@ -38,7 +38,7 @@ const MainDrawer = createDrawerNavigator(
   },
   {
     drawerBackgroundColor: '#fff',
-    drawerWidth: '75%',
+    drawerWidth: '80%',
     contentComponent: ({ navigation }) => (
       <DrawerComponent navigation={navigation} />
     ),

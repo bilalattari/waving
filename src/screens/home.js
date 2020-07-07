@@ -75,9 +75,9 @@ export default (Home = props => {
     )
   }
 
-  const rowIcon = (icon, iconType, number, color, size, style) => {
+  const rowIcon = (icon, iconType, number, color, size, style, onPress) => {
     return (
-      <TouchableOpacity style={[styles.iconRow, style && style]}>
+      <TouchableOpacity style={[styles.iconRow, style && style]} onPress={onPress}>
         <Icon type={iconType ? iconType : 'font-awesome'}
           name={icon} color={color ? color : "#707070"}
           size={size ? size : 20} />
@@ -101,7 +101,7 @@ export default (Home = props => {
               position: "absolute", zIndex: 1200, top: 12, width: "100%", left: 0,
 
             }]}>
-              {rowIcon('menu', 'entypo', undefined, '#fff', 30, { justifyContent: "flex-start" })}
+              {rowIcon('menu', 'entypo', undefined, '#fff', 30, { justifyContent: "flex-start" }, () => { props.navigation.openDrawer() })}
               {rowIcon('dots-three-horizontal', 'entypo', undefined, '#fff', 30, { justifyContent: "flex-end", paddingRight: 12 })}
             </View>
             <Image source={require('../assets/Panel.png')}
